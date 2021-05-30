@@ -1,0 +1,22 @@
+name: PHP Composer
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Deploy FTP
+      uses: sebastianpopp/git-ftp-action@releases/v3
+      with:
+        url: "ftp://ftpupload.net/htdocs/"
+        user: epiz_28753037
+        password: c62Q8GGHtmrd
